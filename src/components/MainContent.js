@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
-import ContactCard from "./ContactCard";
-import Joke from "./Joke";
-import todosData from './todosData';
+import todosData from "./todosData";
+import LoginStatus from './LoginStatus';
 
 class MainContent extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            todos: todosData
+        }
+    }
+
   render() {
     const firstName = "Bob";
     const lastName = "Ziroli";
@@ -17,15 +24,20 @@ class MainContent extends Component {
       styles.color = "Red";
     }
 
-    let todosComponents = todosData.map(todo => <TodoItem key={todo.id} text={todo.text} completed={todo.completed} />);
+    let todosComponents = this.state.todos.map(todo => (
+      <TodoItem key={todo.id} text={todo.text} completed={todo.completed} />
+    ));
 
     return (
       <React.Fragment>
         {/* <h1 style= { {color: "#ffcc00", backgroundColor: "blue"} }>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1> */}
+        <br/>
+        {/* <LoginStatus/> */}
+
+
         <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
-        <div className="todo-list">
-            {todosComponents}
-        </div>
+        <div className="todo-list">{todosComponents}</div>
+
       </React.Fragment>
     );
   }
