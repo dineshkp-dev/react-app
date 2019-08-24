@@ -24,28 +24,39 @@ class MainContent extends Component {
         <TodoItem></TodoItem>
         </div> */}
         <ContactCard
-          name="Mr. Sheldon"
-          imgUrl="http://placekitten.com/300/200"
-          phone="12345656"
-          email="mrshelodn@email.com"
+          contact={{
+            name: "Mr. Sheldon",
+            imgUrl: "http://placekitten.com/300/200",
+            phone: "1234567",
+            email: "mrsheldon@email.com"
+          }}
         />
         <ContactCard
-          name="Mr. Howard"
-          imgUrl="http://placekitten.com/400/200"
-          phone="12345656"
-          email="mrhoward@email.com"
+        contact={{
+            name:"Mr. Howard",
+            imgUrl:"http://placekitten.com/400/200",
+            phone:"12345656",
+            email:"mrhoward@email.com"
+        }}
+
         />
         <ContactCard
-          name="Mr. Leonard"
-          imgUrl="http://placekitten.com/100/300"
-          phone="12345656"
-          email="mrleonard@email.com"
+        contact={{
+            name:"Mr. Leonard",
+            imgUrl:"http://placekitten.com/100/300",
+            phone:"12345656",
+            email:"mrleonard@email.com"
+        }}
+
         />
         <ContactCard
-          name="Mr. Raj"
-          imgUrl="http://placekitten.com/300/400"
-          phone="12345656"
-          email="mrraj@email.com"
+        contact={{
+            name:"Mr. Raj",
+            imgUrl:"http://placekitten.com/300/400",
+            phone:"12345656",
+            email:"mrraj@email.com"
+        }}
+
         />
       </React.Fragment>
     );
