@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
 import todosData from "./todosData";
-import LoginStatus from './LoginStatus';
+import HandleEvents from './HandleEvents';
 
 class MainContent extends Component {
 
@@ -35,8 +35,10 @@ class MainContent extends Component {
         {/* <LoginStatus/> */}
 
 
-        <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
-        <div className="todo-list">{todosComponents}</div>
+        {/* <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
+        <div className="todo-list">{todosComponents}</div> */}
+
+        <HandleEvents/>
 
       </React.Fragment>
     );
