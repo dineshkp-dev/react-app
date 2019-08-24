@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
 import ContactCard from "./ContactCard";
+import Joke from "./Joke";
 
 class MainContent extends Component {
   render() {
@@ -32,31 +33,39 @@ class MainContent extends Component {
           }}
         />
         <ContactCard
-        contact={{
-            name:"Mr. Howard",
-            imgUrl:"http://placekitten.com/400/200",
-            phone:"12345656",
-            email:"mrhoward@email.com"
-        }}
-
+          contact={{
+            name: "Mr. Howard",
+            imgUrl: "http://placekitten.com/400/200",
+            phone: "12345656",
+            email: "mrhoward@email.com"
+          }}
         />
         <ContactCard
-        contact={{
-            name:"Mr. Leonard",
-            imgUrl:"http://placekitten.com/100/300",
-            phone:"12345656",
-            email:"mrleonard@email.com"
-        }}
-
+          contact={{
+            name: "Mr. Leonard",
+            imgUrl: "http://placekitten.com/100/300",
+            phone: "12345656",
+            email: "mrleonard@email.com"
+          }}
         />
         <ContactCard
-        contact={{
-            name:"Mr. Raj",
-            imgUrl:"http://placekitten.com/300/400",
-            phone:"12345656",
-            email:"mrraj@email.com"
-        }}
-
+          contact={{
+            name: "Mr. Raj",
+            imgUrl: "http://placekitten.com/300/400",
+            phone: "12345656",
+            email: "mrraj@email.com"
+          }}
+        />
+        <Joke
+          joke={{
+            answer: "That is funny"
+          }}
+        />
+        <Joke
+          joke={{
+            question: "What is your age?",
+            answer: "That is funny too"
+          }}
         />
       </React.Fragment>
     );
