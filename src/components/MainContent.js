@@ -15,6 +15,24 @@ class MainContent extends Component {
       timeOfDay = "Night";
       styles.color = "Red";
     }
+
+    let jokesData = [
+      {
+        id: 1,
+        question: "What is your name?",
+        answer: "That is funny"
+      },
+      {
+        id: 2,
+        question: "What is your age?",
+        answer: "That is funny too"
+      }
+    ];
+
+    let jokesComponents = jokesData.map(joke => (
+      <Joke key={joke.id} question={joke.question} answer={joke.answer} />
+    ));
+
     return (
       <React.Fragment>
         {/* <h1 style= { {color: "#ffcc00", backgroundColor: "blue"} }>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1> */}
@@ -24,6 +42,7 @@ class MainContent extends Component {
         <TodoItem></TodoItem>
         <TodoItem></TodoItem>
         </div> */}
+        {/* 
         <ContactCard
           contact={{
             name: "Mr. Sheldon",
@@ -56,7 +75,9 @@ class MainContent extends Component {
             email: "mrraj@email.com"
           }}
         />
-        <Joke
+         */}
+
+        {/* <Joke
           joke={{
             answer: "That is funny"
           }}
@@ -66,7 +87,8 @@ class MainContent extends Component {
             question: "What is your age?",
             answer: "That is funny too"
           }}
-        />
+        /> */}
+        {jokesComponents}
       </React.Fragment>
     );
   }
