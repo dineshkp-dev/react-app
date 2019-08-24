@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
 import todosData from "./todosData";
-import HandleEvents from './HandleEvents';
+import HandleEvents from "./HandleEvents";
+import ChangeState from "./ChangeState";
 
 class MainContent extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            todos: todosData
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      todos: todosData
+    };
+  }
 
   render() {
     const firstName = "Bob";
@@ -31,14 +31,13 @@ class MainContent extends Component {
     return (
       <React.Fragment>
         {/* <h1 style= { {color: "#ffcc00", backgroundColor: "blue"} }>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1> */}
-        <br/>
+        <br />
         {/* <LoginStatus/> */}
 
+        {/* <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
+        <div className="todo-list">{todosComponents}</div> */}
 
-        <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
-        <div className="todo-list">{todosComponents}</div>
-
-
+        <ChangeState />
       </React.Fragment>
     );
   }
