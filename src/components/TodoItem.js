@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class TodoItem extends Component {
   constructor() {
     super();
+    // The below is not used;
     this.state = {
       changedId: 0
     };
@@ -19,24 +20,24 @@ class TodoItem extends Component {
     // deprecated
   }
 
-  shouldComponentUpdate(nextProps, nextProps) {
-    // return true to update
-    // return false to not-update
-  }
+  // shouldComponentUpdate() {
+  //   // return true to update
+  //   // return false to not-update
+  // }
 
   componentWillUnmount() {
-    // to do cleanup 
+    // to do cleanup
     // eg. remove event listener
   }
 
-  getDerivedStateFromProps(props, state) {
-    // return new updated state based on the props
-  }
+  // getDerivedStateFromProps(props, state) {
+  //   // return new updated state based on the props
+  // }
 
   getSnapshotBeforeUpdate() {
     // can be used to create backup before update
   }
-  
+
   render(props) {
     console.log(this.props);
     return (

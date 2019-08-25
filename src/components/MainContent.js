@@ -3,14 +3,25 @@ import TodoItem from "./TodoItem";
 import todosData from "./todosData";
 import HandleEvents from "./HandleEvents";
 import ChangeState from "./ChangeState";
+import Conditional from './Conditional';
 
 class MainContent extends Component {
   constructor() {
     super();
     this.state = {
-      todos: todosData
+      todos: todosData,
+      isLoading: true
     };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      console.log('Changing isLoading');
+      this.setState({
+        isLoading: false
+      });
+    }, 5000);
   }
 
   handleChange(id) {
@@ -24,7 +35,7 @@ class MainContent extends Component {
       });
       return {
         todos: updatedTodos
-      }
+      };
     });
   }
 
@@ -50,10 +61,13 @@ class MainContent extends Component {
         <br />
         {/* <LoginStatus/> */}
 
-        <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
-        <div className="todo-list">{todosComponents}</div>
+        {/* <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
+        <div className="todo-list">{todosComponents}</div> */}
 
         {/* <ChangeState /> */}
+        <div>
+          <Conditional isLoading={this.state.isLoading} />
+        </div>
       </React.Fragment>
     );
   }
