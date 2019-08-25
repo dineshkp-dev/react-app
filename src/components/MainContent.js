@@ -10,6 +10,22 @@ class MainContent extends Component {
     this.state = {
       todos: todosData
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(id) {
+    console.log("Changed parent", id);
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.map(todo => {
+        if (todo.id == id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: updatedTodos
+      }
+    });
   }
 
   render() {
@@ -25,7 +41,7 @@ class MainContent extends Component {
     }
 
     let todosComponents = this.state.todos.map(todo => (
-      <TodoItem key={todo.id} text={todo.text} completed={todo.completed} />
+      <TodoItem key={todo.id} todo={todo} handleChange={this.handleChange} />
     ));
 
     return (
@@ -34,10 +50,10 @@ class MainContent extends Component {
         <br />
         {/* <LoginStatus/> */}
 
-        {/* <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
-        <div className="todo-list">{todosComponents}</div> */}
+        <h1 style={styles}>Good {`${timeOfDay} ${firstName} ${lastName}`}</h1>
+        <div className="todo-list">{todosComponents}</div>
 
-        <ChangeState />
+        {/* <ChangeState /> */}
       </React.Fragment>
     );
   }
