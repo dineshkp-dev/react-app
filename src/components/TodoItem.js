@@ -34,11 +34,16 @@ class TodoItem extends Component {
   //   // return new updated state based on the props
   // }
 
-  getSnapshotBeforeUpdate() {
-    // can be used to create backup before update
-  }
+  // getSnapshotBeforeUpdate() {
+  //   // can be used to create backup before update
+  // }
 
   render(props) {
+    const completedStyle = {
+      fontStyle: "Italic",
+      color: "#cdcdcd",
+      textDecoration: "line-through"
+    };
     console.log(this.props);
     return (
       <div className="todo-item">
@@ -47,7 +52,7 @@ class TodoItem extends Component {
           checked={this.props.todo.completed}
           onChange={e => this.props.handleChange(this.props.todo.id)}
         />
-        <p>{this.props.todo.text}</p>
+        <p style={this.props.todo.completed ? completedStyle : null}>{this.props.todo.text}</p>
         <br />
       </div>
     );
